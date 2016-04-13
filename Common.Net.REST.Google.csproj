@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A574441B-0303-45D6-A0EA-CDE34D4303C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common.Net.REST.Google</RootNamespace>
+    <AssemblyName>Common.Net.REST.Google</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Maps, Version=0.9.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Maps.0.9.0.1\lib\net35\Common.Maps.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Net.REST, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Net.REST.1.0.0.1\lib\net40\Common.Net.REST.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Runtime.Serialization, Version=0.9.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Runtime.Serialization.0.9.0.1\lib\net40\Common.Runtime.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Maps\Elevation\Content\GoogleElevationResponseContent.cs" />
+    <Compile Include="Maps\Elevation\Content\GoogleElevationResult.cs" />
+    <Compile Include="Maps\Elevation\GoogleElevationRequest.cs" />
+    <Compile Include="Maps\Elevation\GoogleElevationResponse.cs" />
+    <Compile Include="Maps\Geocode\Content\GoogleGeocodeResponseContent.cs" />
+    <Compile Include="Maps\Geocode\Content\GoogleGeocodeResult.cs" />
+    <Compile Include="Maps\Geocode\Content\GoogleGeometry.cs" />
+    <Compile Include="Maps\Geocode\GoogleForwardGeocodeRequest.cs" />
+    <Compile Include="Maps\Geocode\GoogleForwardGeocodeResponse.cs" />
+    <Compile Include="Maps\Geocode\GoogleGeocodeAdressTypes.cs" />
+    <Compile Include="Maps\Geocode\GoogleGeocodeLocationTypes.cs" />
+    <Compile Include="Maps\Geocode\GoogleReverseGeocodeRequest.cs" />
+    <Compile Include="Maps\Geocode\GoogleReverseGeocodeResponse.cs" />
+    <Compile Include="Maps\Geocode\Transformation\AddressTransformation.cs" />
+    <Compile Include="Maps\Geocode\Transformation\AddressTypeTransformation.cs" />
+    <Compile Include="Maps\Geocode\Transformation\LatLngTransformation.cs" />
+    <Compile Include="Maps\Geocode\Content\GoogleAddressComponent.cs" />
+    <Compile Include="Maps\Geocode\Transformation\LocationTypeTransformation.cs" />
+    <Compile Include="Maps\GoogleBoundingBox.cs" />
+    <Compile Include="Maps\GoogleLatLng.cs" />
+    <Compile Include="GoogleRequest.cs" />
+    <Compile Include="GoogleResponse.cs" />
+    <Compile Include="GoogleResponseContent.cs" />
+    <Compile Include="Maps\Transformation\EncodedPolylineTransformator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
